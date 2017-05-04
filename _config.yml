@@ -22,16 +22,16 @@ url: http://www.stavroskasidis.com
 baseurl: ""
 # baseurl: ""
 
-# google_analytics: UA-52446115-1
+google_analytics: UA-98523909-1
 #repo: http://github.com/AkiraGTX.github.io
-#disqus_shortname: "nandothemes"
-#disqus_site_shortname: "nandothemes"
+disqus_shortname: "stavroskasidis"
+disqus_site_shortname: "stavroskasidis"
 
 # Author settings
 author:
   name      : Stavros Kasidis
   job       : Software Engineer
-  bio       : "Code Enthusiast, always looking for the best project and good coffee."
+  bio       : "Code enthusiast, fighting complexity and striving for quality."
   thumb     : /images/author.jpg
   email     : stavroskasidis@gmail.com
   url       : http://www.stavroskasidis.com
@@ -44,8 +44,8 @@ author:
 navbar:
   # - slug: about
   #  title: About
-  - slug: resume
-    title: Resume
+  # - slug: resume
+  #   title: Resume
   # - slug: skills
   #   title: Skills
   - slug: blog
