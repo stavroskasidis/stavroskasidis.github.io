@@ -17,7 +17,7 @@ $font-weight-bold: 700;
 // Other Sizes
 $base-border-radius: 3px;
 $base-spacing: $base-line-height * 1em;
-$small-spacing: $base-spacing / 2;
+$small-spacing: $base-spacing / 1.2;
 $big-spacing: $base-spacing * 2.5;
 $base-z-index: 0;
 
@@ -31,7 +31,7 @@ $medium-gray-color: #9a9a9a;
 $light-gray-color: #dedede;
 
 // Font Colors
-$base-font-color: lighten($dark-gray-color, 25%);
+$base-font-color: #333;/*lighten($dark-gray-color, 25%);*/
 $action-color: $primary-color;
 
 // Border
