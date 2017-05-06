@@ -8,6 +8,7 @@ keywords: "c#, csharp, guard-clauses, tips-and-tricks "
 category: tips-and-tricks
 tags:
 - tips-and-tricks
+- guard-clauses
 ---
 
 Following the guidelines of [defensive programming][defensive_programming] and [fail-fast system design][fail_fast], a method should always validate it's input.
@@ -100,7 +101,6 @@ public static class GuardClauses
                                          argumentName);
    }
 
-
    public static void IsMoreThan(int minValue, int argumentValue, string argumentName)
    {
        if (argument <= minValue) 
@@ -111,6 +111,7 @@ public static class GuardClauses
 }
 {% endhighlight %}
 
+> **Note:** Some may disagree with Guard Clauses like "**IsLessThan**" and "**IsMoreThan**" because they may step into business logic rules. It's up to you to decide.
 
 [defensive_programming]: https://en.wikipedia.org/wiki/Defensive_programming
 [fail_fast]: https://en.wikipedia.org/wiki/Fail-fast
