@@ -366,3 +366,18 @@ body.home {
     animation: octocat-wave 560ms ease-in-out;
   }
 }
+
+.post .blog-navigation .next {
+    text-align: right;
+}
+
+.post .blog-navigation a {
+    display: block;
+    width: 50%;
+    float: left;
+    margin: 1em 0;
+}
+
+.related {
+    margin: 9rem 0 0rem;
+}

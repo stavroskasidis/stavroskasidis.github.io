@@ -7,8 +7,6 @@ comments: true
 keywords: "c#, csharp, fluent-api, fluent, design, architect"
 category: general
 tags:
-- general
-- c#
 - fluent-api
 ---
 

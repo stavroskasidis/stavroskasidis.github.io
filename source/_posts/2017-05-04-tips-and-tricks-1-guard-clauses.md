@@ -9,7 +9,6 @@ category: tips-and-tricks
 tags:
 - tips-and-tricks
 - guard-clauses
-- c#
 ---
 
 Following the guidelines of [defensive programming][defensive_programming] and [fail-fast system design][fail_fast], a method should always validate it's input.
