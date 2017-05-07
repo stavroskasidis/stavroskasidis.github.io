@@ -12,7 +12,7 @@ tags:
 - fluent-api
 ---
 
-In the previous post, we saw a real life requirement (a custom view engine) and the intended API that the developers would use.
+In the [previous post]({% post_url 2017-05-06-designing-a-flexible-fluent-api-part1 %}), we saw a real life requirement (a custom view engine) and the intended API that the developers would use.
 
 Let's begin with some of the basic constructs used:
 
@@ -41,7 +41,7 @@ In the code displayed in the previous post, you may remember a <span class="inli
 
 Bear with me, there is a reason I am explaining all of this.
 
-Lets see the textbox component:
+Lets see the <span class="inline-highlight nc">TextBox</span> component:
 
 {% highlight csharp %}
 
@@ -73,14 +73,14 @@ public class ComponentEvent
 
 {% endhighlight %}
 
-Now, let's get into the component builders that provide the fluent API we saw in the previous post.
+Now, let's get into the component builders that provide the fluent API we saw in the [previous post]({% post_url 2017-05-06-designing-a-flexible-fluent-api-part1 %}).
 
 {% highlight csharp %}
 
 //Provides the API for the TextBox component
-public TextBoxBuilder
+public class TextBoxBuilder
 {
-    TextBox _textBox;
+    private TextBox _textBox;
 
     public TextBoxBuilder(TextBox textBox)
     {
@@ -93,7 +93,6 @@ public TextBoxBuilder
         _textBox.Name = name;
         return this;
     }
-
     //code omitted
 }
 
@@ -111,19 +110,17 @@ public class ContainerBuilder<TModel>
         //              property name , caption (MVC style, reading attributes) etc
         return new TextBoxBuilder(textBox);
     }
-
      //code omitted
 }
 {% endhighlight %}
 
-Ok, so the TextBoxBuilder is where the textbox specific options will be and each call to an option will return the builder instance so that the chain can
-keep going.
+Ok, so the <span class="inline-highlight nc">TextBoxBuilder</span> is where the textbox specific options will be and each call to an option will return the builder instance so that the chain can keep going.
 
-But what about all those properties that are inherited from the common interfaces: **ICustomCssEnabledComponent** and **IEventEnabledComponent**.
+But what about all those properties that are inherited from the common interfaces, like **ICustomCssEnabledComponent** and **IEventEnabledComponent**.
 We do not want to duplicate the code for handling these properties in every builder, right?
 
-If we try to solve the problem using inheritance, like having <span class="inline-highlight nc">TextBoxBuilder</span> inherit from a base **ComponentBuilder** class that contain those common options, we run into a flexibility problem.
+If we try to solve the problem using inheritance, like having <span class="inline-highlight nc">TextBoxBuilder</span> inherit from a base **ComponentBuilder** class that contains those common options, we run into a flexibility problem.
 
-What happens if an other component builder doesn't need all of those methods? We would expose methods that are unusabled is some cases and this is **bad**.
+What happens if an other component builder doesn't need all of those methods? We would expose methods that are not appropriate is some cases and this is **bad**.
 
-In the next post we will see how we are going to solve this problem, using C#'s extension methods.
+In the [next post]({% post_url 2017-05-07-designing-a-flexible-fluent-api-part3 %}) we will see how we are going to solve this problem, using C#'s extension methods.

@@ -12,7 +12,7 @@ tags:
 - fluent-api
 ---
 
->Through this series we will see a real life example of how to create a fluent API that is be flexible. Keep reading to see what I mean.
+>Through this series we will see a real life example of how to create a fluent API that is flexible. Keep reading to see what I mean.
 
 Recently, I had to design and create a web platform for the company I work for. The platform would be used by other developers of the company to create business applications. One of the many problems I had to solve is a pretty common requirement for this kind of sofware: 
 
@@ -36,12 +36,12 @@ public class MyView : ICodeView<ViewModel>
         {
             panel.AddTextBoxFor(model => model.TextProp2)
                  .AddCssClass("custom-css-class")
-                 .Events(e=> e.Change("myView.textBoxOnChangeJsHandler"));
+                 .Events(e=> e.OnChange("myView.textBoxOnChangeJsHandler"));
 
             panel.AddCheckBoxFor(model => model.BoolProp)
                  .AddCssClass("custom-css-class")
                  .AddCssClass("custom-css-class2")
-                 .Events(e=> e.Change("myView.checkBoxOnChangeJsHandler"));
+                 .Events(e=> e.OnCheck("myView.checkBoxOnCheckJsHandler"));
 
             //Code omitted
         });
@@ -53,4 +53,4 @@ Any respectful API should be easy to understand and not expose irrelevant method
 
 For example, if a component does not support adding a css class to it, then the "AddCssClass" should not be exposed for that component. The same is true for the Events API, not all components support the same events.
 
-In the next post we will see how you can design a flexible API like that.
+In the [next post]({% post_url 2017-05-06-designing-a-flexible-fluent-api-part2 %}) we will see how you can design a flexible API like that.
