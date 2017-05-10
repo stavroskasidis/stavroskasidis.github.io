@@ -16,7 +16,7 @@ Recently, I had to design and create a web platform. The platform would be used 
 
 *"The end user must be able to customize the layout of a CRUD view; e.g. change the order of the fields, hide them, change their captions or size etc"*
 
-The solution we went for is creating a custom view engine for ASP MVC, so that the developers will describe views by code (not razor). The view is created as a tree of component objects that get's rendered as html. The end users are provided with a designer that allows them to modify and save the component tree, thus achieving customization.
+The solution I went for is creating a custom view engine for ASP MVC, so that the developers will describe views by code (not razor). The view is created as a tree of component objects that get's rendered as html. The end users are provided with a designer that allows them to modify and save the component tree, thus achieving customization.
 
 I won't go into more details about the view engine since it is not the focus of this post, so lets get to the "fluent API" part. 
  
