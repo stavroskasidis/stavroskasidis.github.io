@@ -12,7 +12,7 @@ tags:
 
 >Through this series we will see a real life example of how to create a fluent API that is flexible. Keep reading to see what I mean.
 
-Recently, I had to design and create a web platform for the company I work for. The platform would be used by other developers of the company to create business applications. One of the many problems I had to solve is a pretty common requirement for this kind of sofware: 
+Recently, I had to design and create a web platform. The platform would be used by other developers to create business applications. One of the many problems I had to solve is a pretty common requirement for this kind of sofware: 
 
 *"The end user must be able to customize the layout of a CRUD view; e.g. change the order of the fields, hide them, change their captions or size etc"*
 

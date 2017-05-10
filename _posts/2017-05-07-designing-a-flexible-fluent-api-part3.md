@@ -172,3 +172,5 @@ panel.AddTextBoxFor(model => model.TextProp2)
                  .OtherTextBoxSpecificOption(...)
                  .Events(e=> e.OnChange("jsHandlerName"));
 {% endhighlight %}
+
+Awesomeness achieved !!
