@@ -136,7 +136,7 @@
     color: #a31515
 }
 */
-.highlight { margin-top: 1.2em; margin-bottom: 1.2em;  padding: 0; border: none;}
+.highlight { margin-top: 1.2em; margin-bottom: 1.2em;  padding: 0; border: none; font-size: 90%;}
 .highlight pre  { margin: 0;
     padding: 1.0em;
     white-space: pre;
@@ -153,7 +153,7 @@
     margin-bottom: 1.2em;  
     padding: 0; 
     border: none;
-    font-size: 0.9em;
+    font-size: 90%;
     font-family: "Courier New", monospace;
     line-height: 24px;
     padding-top: 5px;
@@ -162,6 +162,7 @@
     padding-right: 3px;
     }
 
+/* C#*/
 .highlight, .inline-highlight   { background: #ededed; }
 .highlight .hll { background-color: #ededed ;  }
 .highlight .c { color: #008000 } /* Comment */
@@ -234,3 +235,11 @@
 .inline-highlight.s1 { color: #a31515 } /* Literal.String.Single */
 .inline-highlight.ss { color: #a31515 } /* Literal.String.Symbol */
 
+/* html*/
+
+.highlight .nt { color: #0000ff } /* tag */
+.highlight .na { color: #2b91af } /* attribute */
+
+
+.inline-highlight.nt { color: #0000ff } /* Literal.String.Single */
+.inline-highlight.na { color: #2b91af } /* Literal.String.Symbol */

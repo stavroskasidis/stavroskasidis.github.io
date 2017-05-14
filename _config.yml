@@ -35,7 +35,7 @@ author:
   thumb     : /images/author.jpg
   email     : stavroskasidis@gmail.com
   url       : http://www.stavroskasidis.com
-  github    : http://github.com/AkiraGTX
+  github    : http://github.com/stavroskasidis
   #twitter   : http://twitter.com/nandomoreirame
   #facebook  : http://facebook.com/fernando.dev
   linkedin  : https://www.linkedin.com/in/stavros-kasidis-786b415a/
@@ -53,5 +53,7 @@ navbar:
 
 # related posts inside a post?
 related: true
+
+timezone: Europe/Athens
 
 exclude: ["gulp", "node_modules", "bower", "bower_components", "config.rb", "src", "Gemfile", "Gemfile.lock", ".rvmrc", ".rbenv-version", "package.json", "gulpfile.js", "README.md", "Rakefile", "changelog.md"]
