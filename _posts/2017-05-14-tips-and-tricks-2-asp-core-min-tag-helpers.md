@@ -71,7 +71,7 @@ But then you may run into situations like *"oops I added a script to the layout 
 
 So let's see the solution that I am currently using for my ASP.NET Core projects.
 
-####1. Switching to gulp
+#### 1. Switching to gulp
 First of all, we are going to change from the default bundler to **gulp**. We add the following gulpfile.js to our project:
 
 {% highlight javascript %}
@@ -137,7 +137,7 @@ What the **"min"** task does is scan our **.js** and **.css** files and create t
 
 By keeping the files seperate we can load them individually in our pages when appropriate. Now we can move to the next step.
 
-####2. Creating a tag helper to serve the appropriate files
+#### 2. Creating a tag helper to serve the appropriate files
 
 So by now you may be thinking, "But dude, now we have to micromanage all of our **.js** and **.css** files!". 
 
