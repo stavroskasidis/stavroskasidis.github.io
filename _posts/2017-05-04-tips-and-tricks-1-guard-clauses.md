@@ -49,7 +49,7 @@ public static class GuardClauses
 {
     public static void IsNotNull(object argumentValue, string argumentName)
     {
-        if (argument == null) 
+        if (argumentValue == null) 
             throw new ArgumentNullException(argumentName);
     }
 }
@@ -75,19 +75,19 @@ public static class GuardClauses
 {
     public static void IsNotNull(object argumentValue, string argumentName)
     {
-        if (argument == null) 
+        if (argumentValue == null) 
             throw new ArgumentNullException(argumentName);
     }
 
     public static void IsNotNullOrEmpty(string argumentValue, string argumentName)
     {
-        if (string.IsNullOrEmpty(argument)) 
+        if (string.IsNullOrEmpty(argumentValue)) 
             throw new ArgumentNullException(argumentName);
     }
 
     public static void IsNotZero(int argumentValue, string argumentName)
     {
-        if (argument == 0) 
+        if (argumentValue == 0) 
             //C# 7.0 syntax: $"Argument '{argumentName}' cannot be zero"
             throw new ArgumentException("Argument '" + argumentName +"' cannot be zero",
                                          argumentName);
@@ -95,7 +95,7 @@ public static class GuardClauses
 
    public static void IsLessThan(int maxValue, int argumentValue, string argumentName)
    {
-       if (argument >= maxValue) 
+       if (argumentValue >= maxValue) 
             //C# 7.0 syntax: $"Argument '{argumentName}' cannot exceed '{maxValue}'"
             throw new ArgumentException("Argument '" + argumentName +"' cannot exceed " + maxValue,
                                          argumentName);
@@ -103,7 +103,7 @@ public static class GuardClauses
 
    public static void IsMoreThan(int minValue, int argumentValue, string argumentName)
    {
-       if (argument <= minValue) 
+       if (argumentValue <= minValue) 
             //C# 7.0 syntax: $"Argument '{argumentName}' cannot be lower than '{minValue}'"
             throw new ArgumentException("Argument '" + argumentName +"'  cannot be lower than " + minValue,
                                          argumentName);
