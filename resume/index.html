@@ -10,5 +10,13 @@ layout: default
     }
 </style>
 
+<script>
+    $.ajax({
+       url:"/resume-static/index.html"
+    }).done(function(data){
+        $("#resume-container").html(data);
+    });
+</script>
 
-<iframe scrolling="no" src="/resume-static" style="width:950px;height:1373px;overflow:hidden;"></iframe>
+<div id="resume-container" style="width:950px;height:1373px;overflow:hidden;"></div>
+<!-- <iframe scrolling="no" src="/resume-static" style="width:950px;height:1373px;overflow:hidden;"></iframe> -->
