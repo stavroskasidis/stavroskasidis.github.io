@@ -5,6 +5,7 @@
     {% include google_analytics.html %}
     <main>
       {% include header.html %}
+      <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 
       <div class="container">
         {{ content }}
@@ -14,7 +15,6 @@
 
       <!-- {% include github-corner.html %} -->
 
-      <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
       <script>
       $(document).ready(function() {
         $('.sliding-panel-button,.sliding-panel-fade-screen,.sliding-panel-close').on('click touchstart',function (e) {
