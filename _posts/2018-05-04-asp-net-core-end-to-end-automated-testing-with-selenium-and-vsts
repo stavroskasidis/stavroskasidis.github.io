@@ -1,0 +1,12 @@
+---
+layout: post
+title: "Automated end-to-end UI testing for ASP.NET Core using selenium and Visual Studio Team Services"
+description: "How to setup automated UI testing for your ASP.NET Core app "
+date: 2018-05-04 18:00
+comments: true
+keywords: "c#, csharp, selenium, ci, continuous integration, vsts, visual studio team services, testing, aspnet core, aspnet, .net core, .net"
+category: general
+tags:
+- automated-testing
+---
+
