@@ -18,15 +18,15 @@
 /* //-- yui-grids style overrides -- */
 body { font-family: Georgia; color: #444; }
 #inner { padding: 10px 80px; margin: 20px auto; background: #f5f5f5; border: solid #666; border-width: 8px 0 2px 0; }
-.yui-gf { margin-bottom: 2em; padding-bottom: 2em; border-bottom: 1px solid #ccc; }
+.yui-gf {margin-bottom: 0.75em;padding-bottom: 0.5em;border-bottom: 1px solid #ccc;}
 
 /* //-- header, body, footer -- */
-#hd { margin: 2.5em 0 3em 0; padding-bottom: 1.5em; border-bottom: 1px solid #ccc }
+#hd {margin: 0.5em 0 1em 0;padding-bottom: 1.5em;border-bottom: 1px solid #ccc;}
 #hd h2 { text-transform: uppercase; letter-spacing: 2px; }
-#bd, #ft { margin-bottom: 2em; }
+#bd, #ft {margin-bottom: 1em;}
 
 /* //-- footer -- */
-#ft { padding: 1em 0 5em 0; font-size: 92%; border-top: 1px solid #ccc; text-align: center; }
+#ft {padding: 1em 0 0em 0;font-size: 92%;border-top: 1px solid #ccc;text-align: center;}
 #ft p { margin-bottom: 0; text-align: center;   }
 
 /* //-- core typography and style -- */
@@ -53,7 +53,7 @@ a#pdf:hover { background: #222; }
 
 .job { position: relative; margin-bottom: 1em; padding-bottom: 1em; border-bottom: 1px solid #ccc; }
 .job h4 { position: absolute; top: 0.35em; right: 0 }
-.job p { margin: 0.75em 0 3em 0; }
+.job p {margin: 0.75em 0 1em 0;}
 
 .last { border: none; }
 .skills-list {  }
@@ -73,6 +73,7 @@ a#pdf:hover { background: #222; }
 
 .yui-u .icon {width: 20px;margin: 5px 10px 0 0;vertical-align: bottom;}
 .download-btn{margin-top: 5px;/* align-content:  center; */}
+
 @media print {
 #pdf{
     visibility: hidden
