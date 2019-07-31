@@ -11,4 +11,6 @@ group :development do
   gem 'jekyll-compose', group: [:jekyll_plugins]
   gem 'kramdown', group: [:jekyll_plugins]
   gem 'json', '~> 2'
+  gem 'tzinfo', '~> 1.2'
+  gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 end

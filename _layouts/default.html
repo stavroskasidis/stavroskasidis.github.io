@@ -3,26 +3,26 @@
   {% include head.html %}
   <body>
     {% include google_analytics.html %}
-    <main>
-      {% include header.html %}
-      <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+      <main>
+          {% include header.html %}
+          <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 
-      <div class="container">
-        {{ content }}
-      </div>
+          <div class="container">
+              {{ content }}
+          </div>
 
-      {% include footer.html %}
+          {% include footer.html %}
 
-      <!-- {% include github-corner.html %} -->
+          <!-- {% include github-corner.html %} -->
 
-      <script>
-      $(document).ready(function() {
-        $('.sliding-panel-button,.sliding-panel-fade-screen,.sliding-panel-close').on('click touchstart',function (e) {
-          $('.sliding-panel-content,.sliding-panel-fade-screen').toggleClass('is-visible');
-          e.preventDefault();
-        });
-      });
-      </script>
-    </main>
+          <script>
+              $(document).ready(function () {
+                  $('.sliding-panel-button,.sliding-panel-fade-screen,.sliding-panel-close').on('click touchstart', function (e) {
+                      $('.sliding-panel-content,.sliding-panel-fade-screen').toggleClass('is-visible');
+                      e.preventDefault();
+                  });
+              });
+          </script>
+      </main>
   </body>
 </html>
