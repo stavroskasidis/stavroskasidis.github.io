@@ -197,7 +197,7 @@ will contain all the logic for altering the state. This new class will then be p
 
 **CounterState.cs**
 {% highlight csharp %}
-//Optional: Created as partial class so that the Manager class can be in a different file.
+/* Optional: Created as partial class so that the Manager class can be in a different file. */
 public partial class CounterState
 {
     public int CurrentCount { get; private set; }
@@ -209,10 +209,10 @@ public partial class CounterState
 {% highlight csharp %}
 public partial class CounterState
 {
-    //This is nested inside the CounterState class
-    //Bonus: We can reuse a generic name like "Manager" because to reference 
-    //       this class, you have to do it through the CounterState class:
-    //       e.g. var manager = new CounterState.Manager(state);
+    // This is nested inside the CounterState class
+    // Bonus: We can reuse a generic name like "Manager" because to reference 
+    //        this class, you have to do it through the CounterState class:
+    //        e.g. var manager = new CounterState.Manager(state);
     public class Manager
     {
         private readonly CounterState state;
