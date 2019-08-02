@@ -33,7 +33,7 @@ Let's how we could approach this using events. We will create 4 components:
 * **CounterIncrementButton.razor** - This is the button that increments the counter.
 * **CounterResetButton.razor** - This is the button that resets the counter.
 
-Here is how they look like:
+Here's what they look like:
 
 **Counter.razor**
 {% highlight xml %}
@@ -83,12 +83,13 @@ Here is how they look like:
 
 As you can see, we are passing down events to the component tree so that the "root" component (Counter.razor) stays updated. This is required because 
 Blazor components will re-render only if:
-* Their parameters have changed.
-* After an `EventCallback<>` is invoked.
+* Their [parameters](https://docs.microsoft.com/en-us/aspnet/core/blazor/components?view=aspnetcore-3.0#component-parameters) have changed.
+* After an [EventCallback](https://docs.microsoft.com/en-us/aspnet/core/blazor/components?view=aspnetcore-3.0#eventcallback) is invoked.
 * You invoke the `StateHasChanged()` method inside the component.
 
 ### Well... this kinda sucks !!
 
+We are passing down events everywhere, plus the counter's state logic is included in the component's code itself. 
 This is where "state management" as a concept comes to help us. 
 
 So what is "state management" ?
@@ -100,14 +101,14 @@ No matter what pattern/library you decide to use, it all boils down to a couple 
 There are many state management libraries that you can use that have been ported from javascript, like **Redux**, **Fluxor** etc. You can find a good collection
 of libraries in this awesome repo here: [https://github.com/AdrienTorris/awesome-blazor](https://github.com/AdrienTorris/awesome-blazor).
 
-These libraries obviously are super optimal in re-rendering, that is why they usually bring quite a bit of boilerplate code.
+These libraries are supposed to be super optimal in re-rendering, that is why they usually bring quite a bit of boilerplate code in my opinion.
 
-However, if you want something simple and want to avoid 3rd party dependencies you can create your own state management following the principles above.
+However, if you want something simple and you want to avoid 3rd party dependencies, you can create your own state management following the principles above.
 
 ### Iteration 2 - Using a "State" object
 
 So, we need a read-only object that will hold the state of the counter. The object will be passed down to all child components as a 
-**CascadingParameter** and it will contain public methods to allow state to be changed. 
+[**CascadingParameter**](https://docs.microsoft.com/en-us/aspnet/core/blazor/components?view=aspnetcore-3.0#cascading-values-and-parameters) and it will contain public methods to allow state to be changed. 
 
 It will also contain an **OnCountChanged** event so that the "page" component (Counter.razor) will subscribe to, 
 listening for changes to re-render itself.
@@ -186,7 +187,7 @@ Here is how the components will look like with the `CounterState` class:
 
 This is an improvement over the the first iteration, however this solution is still mediocre in my opinion. The problem is that you have to pass down the state object and it may be "misused" by the child components if they read data directly from the state.
 
-To improve on this concept, we need another class that will "manage" the state without exposing the state itself down the tree, while keeping the state read-only.
+To improve on this concept, we need another class that will "manage" the state without exposing the state itself down the tree, while keeping it read-only.
 
 This is where C# 's **nested** classes come into play, because a nested class can access the private members of the parent class.
 
@@ -194,12 +195,11 @@ This is where C# 's **nested** classes come into play, because a nested class ca
 ### Iteration 3 - Using a "StateManager" nested class
 
 So, we will create a **"StateManager"** class, nested in the **"State"** class, that
-will contain all the logic for altering the state. This new class will be then passed down the tree for the child components to consume.
+will contain all the logic for altering the state. This new class will then be passed down the tree for the child components to consume.
 
 **CounterState.cs**
 {% highlight csharp %}
-//Created as partial class so that the Manager class can be in a different file
-//This is optional
+//Optional: Created as partial class so that the Manager class can be in a different file.
 public partial class CounterState
 {
     public int CurrentCount { get; private set; }
@@ -224,11 +224,13 @@ public partial class CounterState
         }
         public void IncrementCounter()
         {
+            //We can access private setter of CurrentCount, because this class is nested inside CounterState
             this.state.CurrentCount++;
             OnCountChanged?.Invoke();
         }
         public void ResetCounter()
         {
+            //We can access private setter of CurrentCount, because this class is nested inside CounterState
             this.state.CurrentCount = 0;
             OnCountChanged?.Invoke();
         }
@@ -287,7 +289,7 @@ the child components cannot misuse the state object.
 ### Conclusion
 
 I like this approach and this is what I am currently using in my projects. Maybe this is not as optimal as a dedicated state management library theoretically is, 
-but this way you are avoiding boilerplate code.
+but this way you are avoiding boilerplate code and extra dependencies.
 
 What do you think? Would you do something like this or use a library? Feel free to comment your own ideas and suggestions.
 
