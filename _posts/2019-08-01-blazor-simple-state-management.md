@@ -123,13 +123,11 @@ public class CounterState
         CurrentCount++;
         OnCountChanged?.Invoke();
     }
-
     public void ResetCounter()
     {
         CurrentCount = 0;
         OnCountChanged?.Invoke();
     }
-
     public event Action OnCountChanged;
 }
 {% endhighlight %}
