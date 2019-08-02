@@ -166,7 +166,7 @@
 .highlight, .inline-highlight   { background: #ededed; }
 .highlight .hll { background-color: #ededed ;  }
 .highlight .c { color: #008000 } /* Comment */
-.highlight .err { border: 1px solid #FF0000 } /* Error */
+/*.highlight .err { border: 1px solid #FF0000 } /* Error - REMOVED */
 .highlight .k { color: #0000ff } /* Keyword */
 .highlight .cm { color: #008000 } /* Comment.Multiline */
 .highlight .cp { color: #0000ff } /* Comment.Preproc */
@@ -203,7 +203,7 @@
 
 .inline-highlight.hll { background-color: #ededed ;  }
 .inline-highlight.c { color: #008000 } /* Comment */
-.inline-highlight.err { border: 1px solid #FF0000 } /* Error */
+/*.inline-highlight.err { border: 1px solid #FF0000 } /* Error - REMOVED */
 .inline-highlight.k { color: #0000ff} /* Keyword */
 .inline-highlight.cm { color: #008000 } /* Comment.Multiline */
 .inline-highlight.cp { color: #0000ff } /* Comment.Preproc */
