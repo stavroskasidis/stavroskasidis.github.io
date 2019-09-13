@@ -143,7 +143,7 @@ Here is how the components will look like with the `CounterState` class:
 @page "/counter"
 <h1>Counter</h1>
 <CascadingValue Value="state">
-    <CounterDisplay />
+    <CounterDisplay CurrentCount="state.CurrentCount" />
 </CascadingValue>
 @code{
     private CounterState state;
